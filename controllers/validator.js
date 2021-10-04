@@ -2,13 +2,13 @@ const Joi = require("joi")
 
 const validator = (req, res, next) => {
     const schema = Joi.object({
-        name: Joi.string().min(3).max(15).required().trim().pattern(new RegExp("^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$")).messages({
+        name: Joi.string().min(3).max(15).required().trim().pattern(new RegExp("[A-Za-z\s]+$")).messages({
             "string.empty": "The NAME field must be completed",
             "string.min": "The NAME field must be between 3 and 8 letters",
             "string.max": "The NAME field must be between 3 and 8 letters",
             "string.pattern.base": "Only letters are allowed in the NAME field. No spaces"
         }),
-        lastName: Joi.string().min(3).max(15).required().pattern(new RegExp("^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$")).trim().messages({
+        lastName: Joi.string().min(3).max(15).required().pattern(new RegExp("[A-Za-z\s]+$")).trim().messages({
             "string.empty": "The LAST NAME field must be completed",
             "string.min": "The LAST NAME field must be between 3 and 8 letters",
             "string.max": "The LAST NAME field must be between 3 and 8 letters",
