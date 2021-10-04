@@ -59,7 +59,7 @@ const CommentComp = (props) => {
     return (
         <>
             <div id= "divInputChange">
-                <img id= "picInputChange"src={props.commentCurrent.userId.photoUser}/>
+                <img id= "picInputChange"src={props.commentCurrent.userId.photoUser} alt="..."/>
                 <p id= "pInputChange">{props.commentCurrent.userId.name}</p>
             </div>    
             <div id="inputChange">

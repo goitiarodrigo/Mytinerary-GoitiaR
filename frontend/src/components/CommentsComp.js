@@ -34,10 +34,9 @@ const deleteCom=(idItinerary, commentId, token)=>{
     .catch((e)=> console.log(e))
 }
 
-
-
 const editComment = (commentId, comment, token)=> {
     props.changeComment(commentId, comment, token)
+    // eslint-disable-next-line
     .then((res)=> {allComment.map(oneComment => {
                     if (oneComment._id === commentId){
                         oneComment.comment=comment
